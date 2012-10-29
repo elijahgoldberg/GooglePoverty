@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  term_id: 1
+  value: 1
+  start: 2012-10-28
+  end: 2012-10-28
+
+two:
+  term_id: 1
+  value: 1
+  start: 2012-10-28
+  end: 2012-10-28

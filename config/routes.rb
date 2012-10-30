@@ -1,16 +1,13 @@
 GooglePoverty::Application.routes.draw do
   
-  resources :terms
+  resources :terms, :batches
   
   root :to => 'terms#index'
   
-  # Page for generating new observations
-    # Allows you to specify term, geography and time frame
-  match '/process' => 'observations#new'
+  match '/test' => 'batches#test_pull'
   
-  # Performs /process action, pulling data from Google
-  match '/process/create' => 'observations#create'
-
+  match '/barrage' => 'batches#barrage'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,25 @@
+= form_for(@batch) do |f|
+	- if @batch.errors.any?
+		#error_explanation
+			= pluralize(@batch.errors.count, "error") 
+			prohibited this batch from being created:
+			%ul
+			- @batch.errors.full_messages.each do |msg|
+				%li= msg
+	%field
+		= f.label :term_id
+		= f.number_field :term_id
+		/ = f.select :term_id, options_for_select([ Term.all.collect { |t| [t.text, t.id] } ])
+		/ = f.collection_select :term_id, @terms, :id, :text, options = { :prompt => "Select a term" }
+
+	%field
+		= f.label :geography_id
+		= f.number_field :term_id
+		/ = f.select :geography_id, options_for_select([ Geography.all.collect { |t| [t.name, t.id] } ])
+	
+	%field
+		= f.label :range
+		= f.select :range, options_for_select([['All', 'all']])
+	
+	%actions
+		= f.submit

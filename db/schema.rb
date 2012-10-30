@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121029004237) do
+ActiveRecord::Schema.define(:version => 20121030041444) do
+
+  create_table "batches", :force => true do |t|
+    t.integer  "term_id"
+    t.string   "range"
+    t.boolean  "processed"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "geography_id", :default => 0
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -32,8 +41,9 @@ ActiveRecord::Schema.define(:version => 20121029004237) do
   create_table "geographies", :force => true do |t|
     t.string   "name"
     t.string   "parent_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "abbreviation", :default => "f"
   end
 
   create_table "observations", :force => true do |t|

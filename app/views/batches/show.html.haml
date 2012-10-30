@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Term:</b>
+  <%= @batch.term_id %>
+</p>
+
+<p>
+  <b>Geo:</b>
+  <%= @batch.geography_id %>
+</p>
+
+<p>
+  <b>Range:</b>
+  <%= @batch.range %>
+</p>
+
+<p>
+  <b>Processed:</b>
+  <%= @batch.processed %>
+</p>
+
+
+<%= link_to 'Edit', edit_batch_path(@batch) %> |
+<%= link_to 'Back', batches_path %>

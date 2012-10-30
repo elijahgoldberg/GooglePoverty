@@ -1,0 +1,29 @@
+<h1>Listing batches</h1>
+
+<table>
+  <tr>
+    <th>Term</th>
+    <th>Geo</th>
+    <th>Range</th>
+    <th>Processed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @batches.each do |batch| %>
+  <tr>
+    <td><%= batch.term_id %></td>
+    <td><%= batch.geography_id %></td>
+    <td><%= batch.range %></td>
+    <td><%= batch.processed %></td>
+    <td><%= link_to 'Show', batch %></td>
+    <td><%= link_to 'Edit', edit_batch_path(batch) %></td>
+    <td><%= link_to 'Destroy', batch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Batch', new_batch_path %>

@@ -4,9 +4,6 @@ class TermsController < ApplicationController
   def index
     
     @terms = Term.all
-    
-    @t = Term.first
-    @t.delay.testWrite
 
     respond_to do |format|
       format.html # index.html.erb

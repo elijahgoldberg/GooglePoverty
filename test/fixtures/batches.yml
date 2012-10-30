@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  term_id: 1
+  geo_id: 1
+  range: MyString
+  processed: false
+
+two:
+  term_id: 1
+  geo_id: 1
+  range: MyString
+  processed: false

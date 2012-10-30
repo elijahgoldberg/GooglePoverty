@@ -11,3 +11,17 @@
  *= require_self
  *= require_tree .
  */
+
+#left {
+	width: 350px;
+	float: left;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	background-color: #dbdbdb;
+	padding: 15px;
+}
+
+#right {
+	margin-left: 350px;
+}

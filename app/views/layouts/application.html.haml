@@ -1,0 +1,36 @@
+%doctype
+%html
+%head
+	%title
+	= stylesheet_link_tag "application", :media => "all"
+	= javascript_include_tag "application"
+	= csrf_meta_tags
+	
+%body
+	#left
+		%h1 Google Poverty Index
+	
+		#actions
+			%h4 Actions
+			= link_to "Create a new batch", new_batch_path
+		
+		#stats
+			%h4 Quick stats
+			%table
+				%tr
+					%td Terms:
+					%td= Term.all.count
+				%tr
+					%td Geographies:
+					%td= Geography.all.count
+				%tr
+					%td Observations:
+					%td= Observation.all.count
+				%tr
+					%td All batches:
+					%td= Batch.all.count
+				%tr
+					%td Processed batches:
+					%td= Batch.where("processed = ?", 1).count
+	#right
+		= yield

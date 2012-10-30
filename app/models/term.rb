@@ -2,8 +2,6 @@ class Term < ActiveRecord::Base
   attr_accessible :text, :level
   
   has_many :observations
+  has_many :batches
   
-  def testWrite
-    File.open("sample.txt", 'w') {|f| f.write("Beautiful") }
-  end
 end
